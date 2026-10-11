@@ -11,3 +11,8 @@ __pycache__/
 # Build output
 build/
 *.bin
+
+# Original photos (may contain location data). Only the cleaned copies are committed.
+*.HEIC
+*.heic
+docs/images/Screenshot*

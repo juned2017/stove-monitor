@@ -45,6 +45,13 @@ flowchart LR
 
 **Total: about $35**, plus a laptop (or later, a Raspberry Pi) as the home server.
 
+<p>
+  <img src="docs/images/sensor.jpg" alt="MLX90614 infrared temperature sensor, with VIN, GND, SCL and SDA pins" width="32%">
+  <img src="docs/images/esp32-board.jpg" alt="HiLetgo ESP32 development board" width="64%">
+</p>
+
+*Left: the MLX90614 infrared sensor. The four holes are power, ground, and two data lines. Right: the ESP32 board.*
+
 ## Key design decisions
 
 - **Non-contact sensing.** An infrared sensor under the hood means no wiring into a gas appliance, and it works on any stove.
@@ -70,13 +77,23 @@ flowchart LR
 
 - **Sep 28:** Started the project. Picked a non-contact infrared sensor, an ESP32, and MQTT. Got Mosquitto running in Docker and built a fake ESP32 to test against.
 - **Oct 1:** Parts arrived. Wrote the ESP32 firmware. Learned that the sensor's header pins come unattached, and that a wire near the board's flash-memory pins blocks code uploads.
-- **Oct 8:** First real reading: `Room 23.8 C | Pointed at 23.9 C` 🎉
+
+  <img src="docs/images/wiring.jpg" alt="First wiring attempt: jumper wires on the ESP32, with the sensor and its loose header pins beside it" width="45%">
+
+  *First wiring attempt. The jumpers are on the ESP32, but the sensor's header pins (center) still needed attaching.*
+
+- **Oct 8:** First real readings 🎉 Room temperature, then my palm (up to 35.5°C), then my laptop (~26–27°C).
+
+  <img src="docs/images/first-reading.png" alt="Serial Monitor output: room temperature steady near 23.8 C while the pointed-at temperature rises to 35.5 C for a palm and about 27 C for a laptop" width="45%">
+
+  *The sensor's first readings. "Room" is the sensor's own temperature. "Pointed at" jumps when something warm is in front of it.*
 
 ## Repository layout
 
 ```
 stove_monitor/
 ├── docker-compose.yml        # Mosquitto broker
+├── docs/images/              # Build photos
 ├── mosquitto/config/         # Broker settings
 ├── simulator/                # Fake ESP32 for testing without hardware
 └── firmware/
