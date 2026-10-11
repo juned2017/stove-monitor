@@ -55,7 +55,7 @@ flowchart LR
 ## Key design decisions
 
 - **Non-contact sensing.** An infrared sensor under the hood means no wiring into a gas appliance, and it works on any stove.
-- **Cheap sensor first, upgrade if needed.** A $12 single-point sensor before a $60 thermal camera. Real tests at hood height decide whether the upgrade is worth it.
+- **Cheap sensor first, upgrade if needed.** A $16 single-point sensor before a $60 thermal camera. Real tests at hood height decide whether the upgrade is worth it.
 - **Laptop before Raspberry Pi.** Everything runs in Docker, so it moves to a Pi later with no code changes.
 - **Software before hardware.** While waiting for parts, I built a fake ESP32 that sends realistic readings, so the backend could be developed and tested first.
 - **MQTT for messaging.** It's lightweight and built for small devices. Its "last will" feature lets the system detect when the sensor loses power or Wi-Fi. A silent sensor is a failure worth alerting on too.
