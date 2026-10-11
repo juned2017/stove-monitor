@@ -1,5 +1,7 @@
 # Step 3: the real ESP32
 
+> **Status:** `sensor_test` is working on real hardware. `stove_sensor` (Wi-Fi) is written but not yet tested.
+
 Two programs, run in this order:
 
 | Program | What it does | Needs Wi-Fi? |
