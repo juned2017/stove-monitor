@@ -39,9 +39,9 @@ flowchart LR
 | Part | What it does | Approx. cost |
 |---|---|---|
 | ESP32 dev board (HiLetgo ESP-32S) | Small Wi-Fi computer that reads the sensor | $10 |
-| MLX90614 IR temperature sensor | Measures the cooktop's temperature from a distance | $12 |
+| MLX90614 IR temperature sensor | Measures the cooktop's temperature from a distance | $16 |
 | Jumper wires | Connect the sensor to the ESP32 (4 wires) | $6 |
-| Micro-USB to USB-C data cable | Power and uploading code | $7 |
+| Micro-USB to USB-C data cable | Power and uploading code | $7 or free if you already have one |
 
 **Total: about $35**, plus a laptop (or later, a Raspberry Pi) as the home server.
 
