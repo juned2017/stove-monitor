@@ -1,0 +1,13 @@
+# Personal settings (Wi-Fi password, home network address)
+firmware/stove_sensor/secrets.h
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Build output
+build/
+*.bin
